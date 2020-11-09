@@ -4,6 +4,19 @@
   <title>새벽이 멈춰도</title>
        <style>
         
+#container {
+  width: 1000px;
+  height:1000px;
+  overflow: auto;
+}
+.item {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+        
 @font-face {
   font-family: "NanumHandmtod";
   font-style: normal;
@@ -145,7 +158,10 @@ body {
    </style>
  </head>
 <body>
-  
+ 
+ 
+  <div id="container">
+   <div class="item">
     <h4 class="wordCarousel">    
      <span style="font-family: NanumHandmtod; color:white; font-weight: 50;">
          새벽이 멈춰도
@@ -160,16 +176,16 @@ body {
         </div>
       </span>
      </h4>
-    
- 
- 
+    </div>
+    <div class="item">2</div>
+   </div>
     
     <!-- <audio autoplay loop> -->
     <!--    <source src="relax.mp3" type="audio/mp3"> -->
     <!-- </audio> -->
    
 </body>
-  
-  
-  
+  <footer>
+    <p></p>
+  </footer>
 </html>
