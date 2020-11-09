@@ -9,11 +9,7 @@
   height: 100vh;
   overflow: auto;
   scroll-snap-type: y mandatory;
- 
- -ms-overflow-style: none;
-  ::-webkit-scrollbar {
-    display: none;
-   }
+
 }
 .item {
   display: flex;
@@ -162,15 +158,19 @@ body {
   background: #111;	
   overflow-y: hidden; overflow-x: hidden;
 }
+    
+  ::-webkit-scrollbar {
+    display: none;
+   }
                 
    </style>
  </head>
 <body>
  
  
-  <div id="container">
+  <div id="container; -ms-overflow-style: none;">
    <div class="item">
-    <h4 class="wordCarousel">    
+    <h4 class="wordCarousel;">    
      <span style="font-family: NanumHandmtod; color:white; font-weight: 50;">
          새벽이 멈춰도
         <div> 
