@@ -8,11 +8,6 @@
    </script>
   
   <style>
-  background-image: url("../dust-background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-   
   
 body {	
   font-family: "NanumHandmtod", cursive;	
@@ -20,10 +15,7 @@ body {
   <!-- align-items: center;	-->
   <!-- justify-content: center;	-->
 
-  background-image: url("../dust-background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: black;
 }            
    
 #container {
@@ -31,6 +23,10 @@ body {
   height: 100vh;
   overflow: auto;
   scroll-snap-type: y mandatory;
+  background-image: url("../dust-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .item {
   display: flex;
@@ -47,9 +43,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
-.item:nth-child(n+2) {
-  background-image: none;
 }
     
 @font-face {
