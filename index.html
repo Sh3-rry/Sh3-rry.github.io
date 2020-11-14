@@ -30,7 +30,17 @@
 background: -webkit-linear-gradient(60deg, #000000, #212121); /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(60deg, #000000, #212121); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
 }
-
+.item:nth-child(n+2) {
+ background-image: url("../background.png");
+ 
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   -webkit-background-size: cover; 
+   -moz-background-size: cover; 
+   -o-background-size: cover; 
+   background-size: cover;  
+}
+   
 @font-face {
   font-family: "NanumHandmtod";
   font-style: normal;
@@ -167,15 +177,6 @@ body {
   <!-- align-items: center;	-->
   <!-- justify-content: center;	-->
 
-   background-image: url("../background.png");
- 
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   -webkit-background-size: cover; 
-   -moz-background-size: cover; 
-   -o-background-size: cover; 
-   background-size: cover;  
- 
    }          
 
  </style>
