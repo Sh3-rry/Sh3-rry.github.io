@@ -25,13 +25,16 @@
 #container::-webkit-scrollbar {
     display: none;
 }
-.item:nth-child(n+2) {
-  background-image: url("../background.png") no-repeat 50% 50% fixed; 
- -webkit-background-size: cover; 
- -moz-background-size: cover; 
- -o-background-size: cover; 
- background-size: cover;  
+.item:nth-child(1) {
+ background: #000000; /* fallback for old browsers */
+background: -webkit-linear-gradient(60deg, #000000, #212121); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(60deg, #000000, #212121); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
 }
+.item:nth-child(n+2){
+   /*투명 설정*/
+ 
+ 
+ }
     
 @font-face {
   font-family: "NanumHandmtod";
@@ -169,10 +172,13 @@ body {
   <!-- align-items: center;	-->
   <!-- justify-content: center;	-->
 
- 
-background: #000000; /* fallback for old browsers */
-background: -webkit-linear-gradient(60deg, #000000, #212121); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(60deg, #000000, #212121); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   background-image: url("../background.png");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   -webkit-background-size: cover; 
+   -moz-background-size: cover; 
+   -o-background-size: cover; 
+   background-size: cover;  
  }          
 
  </style>
