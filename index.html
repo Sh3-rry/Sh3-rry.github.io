@@ -10,7 +10,7 @@
 <style>
  
 body {	
-  font-family: "NanumHandmtod", cursive;	
+
   display: flex;	
   <!-- align-items: center;	-->
   <!-- justify-content: center;	-->
@@ -31,8 +31,6 @@ body {
 .item {
   display: flex;
   height: 100%;
-  align-items: center;
-  justify-content: center;
   scroll-snap-align: center;
 }
 #container::-webkit-scrollbar {
@@ -178,8 +176,11 @@ html {
  
   <div id="container">
    <div class="item">
+    <span style="align-items: center; justify-content: center;">
     <h4 class="wordCarousel">    
      <span style="font-family: NanumHandmtod; color:white; font-weight: 50;">
+      
+       
          새벽이 멈춰도
         <div> 
 <!--        Use classes 2,3, or 4 to match the number of words --> 
@@ -190,15 +191,12 @@ html {
                 <li>파상과 배반의 사명으로</li>
             </ul>
         </div>
+       </span>
       </span>
      </h4>
     </div>
     <div class="item">
-     <p style="color:white; font-size:72px">안녕하세요. 호빈입니다.</p>
-     
-     </div>
-    <div class="item">
-     <p style="color:white; font-size:72px">예시입니다.</p>
+     <p style="color:white;  font-size:72px">안녕하세요. 호빈입니다.</p>
      
      </div>
  </div>
