@@ -9,14 +9,12 @@
     <form name="frm1"> 
            <input type="text" name="ans"/>
            <input type='button' name='btn' value='Hello' onclick="ansChk()">
-     </form>
+    </form>
   <script type="text/javascript">
-     function ansChk()
-        {
-           if(document.frm1.ans.value == "a") {
-               location.href = './Doyoubelieve.html';
-           } 
-        } 
+     function ansChk() {
+           if(document.frm1.ans.value == "pgy") location.href = './index2.html';
+           else location.href = './Doyoubelieve.html'
+     } 
   </script>  
  </body>
 </html>
