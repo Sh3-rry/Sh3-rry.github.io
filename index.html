@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style/pagestyle1.css" />
+    <title>Hello Y</title>
+    <meta charset="UTF-8" />
+    <script type="text/javascript">
+        function ansChk()
+        {
+            if(document.frm1.ans.value == "a") {
+                location.href = './2. Doyoubelieve.html';
+                alert('a');
+            }
+        }
+    </script>
+
+
+
+ </head>
+ <body> 
+
+
+
+    <form name="frm1"> 
+        
+      <input id='answer' type='text' name="ans"/> <input type='submit' value='Hello' onclick="ansChk()">
+    </form>
+ 
+</body>
+</html>
