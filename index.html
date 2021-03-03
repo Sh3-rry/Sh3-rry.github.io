@@ -6,15 +6,34 @@
     <meta charset="UTF-8"/>
 </head>
  <body>
-    <form name="frm1"> 
-           <input type="text" name="ans"/>
-           <input type='button' name='btn' value='Hello' onclick="ansChk()">
-    </form>
+
+   <div class="inner_login">
+      <div class="login_joynamite">
+  
+          <form name="frm1" id="authForm" >
+              <fieldset>
+                      <div class="box_login">
+                          <div class="inp_text">
+                              <input type="text" id="inputcode" name="inputcode" placeholder="Input code" onkeyup="Enterkey();">
+                          </div>
+                      </div>
+                      <input type="button" class="btn_login" value="I N" onclick="ansChk()" style="text-align: center"></input>
+              </fieldset>
+          </form>
+      </div>
+  </div>
+
   <script type="text/javascript">
-     function ansChk() {
-           if(document.frm1.ans.value == "pgy") location.href = './index2.html';
-           else location.href = './Doyoubelieve.html'
-     } 
-  </script>  
- </body>
+   function ansChk() {
+         if(document.frm1.inputcode.value == "pgy") location.href = './index2.html';
+         else location.href = './Doyoubelieve.html'
+   }      
+
+   function Enterkey(){
+      if(window.event.keycode == 13){
+         ansChk();      
+      }
+   }
+   </script>  
+</body>
 </html>
