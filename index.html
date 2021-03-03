@@ -14,7 +14,7 @@
               <fieldset>
                       <div class="box_login">
                           <div class="inp_text">
-                              <input type="text" id="inputcode" name="inputcode" placeholder="Input code" onkeyup="Enterkey();">
+                              <input type="text" id="inputcode" name="inputcode" placeholder="Input code" onkeydown="Enterkey()">
                           </div>
                       </div>
                       <input type="button" class="btn_login" value="I N" onclick="ansChk()" style="text-align: center"></input>
@@ -30,7 +30,9 @@
    }      
 
    function Enterkey(){
-      if(window.event.keycode == 13){
+      var key = event.keyCode
+      if(key == 13){
+         alert('');
          ansChk();      
       }
    }
