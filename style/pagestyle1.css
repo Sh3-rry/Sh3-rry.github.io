@@ -3,7 +3,9 @@
     -webkit-background-size: cover; 
     -moz-background-size: cover;
     -o-background-size: cover; 
-    background-size: cover;
+    background-size: 100vh;
+    background-position: center center;
+    background-color: black;
 }
 
     
@@ -24,7 +26,7 @@ input {
     display: inline-block;
     text-align: start;
     -webkit-appearance: textfield;
-    background-color: white;
+    background-color: black;
     -webkit-rtl-ordering: logical;
     cursor: text;
     margin: 0em;
