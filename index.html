@@ -2,13 +2,14 @@
 <html>
 <head>
     <link rel="stylesheet" href="./style/pagestyle1.css" />
-    <title>PSYcho</title>
+    <link rel="stylesheet" href="./style/loginform.css" />
+    <title>Nightmare</title>
     <meta charset="UTF-8"/>
 </head>
  <body>
 
    <div class="inner_login">
-      <div class="login_joynamite">
+      <div class="login_joy">
   
           <form name="frm1" id="authForm" >
               <fieldset>
@@ -25,8 +26,7 @@
 
   <script type="text/javascript">
    function ansChk() {
-         if(document.frm1.inputcode.value == "pgy") location.href = './index2.html';
-         else location.href = './Doyoubelieve.html'
+         if(document.frm1.inputcode.value == "") location.href = './firstpage.html';
    }      
 
    function Enterkey(){
