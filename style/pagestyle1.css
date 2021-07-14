@@ -14,3 +14,9 @@
     font-weight: 50;
     src: url("../font/SF_Fedora.ttf") format('truetype');
   }
+  @font-face {
+    font-family: "haram";
+    font-style: normal;
+    font-weight: 50;
+    src: url("../font/haram.ttf") format('truetype');
+  }
