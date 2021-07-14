@@ -4,6 +4,7 @@
     <meta http-equiv="Cache-Control" content="no-cache"/> 
     <meta http-equiv="Expires" content="0"/>
     <meta http-equiv="Pragma" content="no-cache"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" href="./style/pagestyle3.css" />
     <link rel="stylesheet" href="./style/loginform.css" />
     <link rel="stylesheet" href="./style/defaultsetting.css" />
@@ -12,12 +13,29 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
- <body>
+ 
+<body>
 
-    
-    <p class="result" style="font-size: 30px;"></p>
-  
-  
+  <!-- <p class="result" style="font-size: 30px;"></p> -->
+
+   
+    <div class="typing-txt"> 
+        <ul>
+          <li>벌써 예림이를 떠나보낸지 나흘이 되는 날.</li>
+          <li>예림이를 떠나보낼 수 없어 장례를 치르는 내내 한 순간도 잠을 이룰 수가 없었다.</li>
+          <li>가장 사랑하는 친구이자 동생이고 후배였던 예림이.</li>
+        </ul>
+    </div> 
+   
+    <div class="typing">
+         <ul>
+             <li></li>
+             <li></li>
+             <li></li>
+        </ul>
+    </div> 
+
+
     <div class="inner_login">
         <div class="login_joy">
     
@@ -39,6 +57,7 @@
        </audio>
        <button type="button" onclick="aud_play_pause()" style="position: fixed; bottom: 0; right: 0; background-color:rgba(0,0,0,0); border:1px solid black;color:skyblue">BGM</button> 
     
+    </body>
 
     <script type="text/javascript">
      function ansChk() {
@@ -75,99 +94,53 @@ function aud_play_pause() {
       else { myAudio.pause(); } 
 } 
 
-//---------------
-
-String.prototype.toKorChars = function() { 
-        var cCho = [ 'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ' ], 
-        cJung = [ 'ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅓ', 'ㅔ', 'ㅕ', 'ㅖ', 'ㅗ', 'ㅘ', 'ㅙ', 'ㅚ', 'ㅛ', 'ㅜ', 'ㅝ', 'ㅞ', 'ㅟ', 'ㅠ', 'ㅡ', 'ㅢ', 'ㅣ' ], 
-        cJong = [ '', 'ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ', 'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ', 'ㅁ', 'ㅂ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ' ], cho, jung, jong; 
-        var str = this, 
-        cnt = str.length, 
-        chars = [], 
-        cCode; 
-        for (var i = 0; i < cnt; i++) { 
-            cCode = str.charCodeAt(i); 
-            if (cCode == 32) { 
-              chars.push(" ");
-              continue;
-            } // 한글이 아닌 경우 
-            if (cCode < 0xAC00 || cCode > 0xD7A3) { 
-                chars.push(str.charAt(i)); continue; 
-                } 
-            cCode = str.charCodeAt(i) - 0xAC00; 
-
-            jong = cCode % 28; 
-            // 종성 
-            jung = ((cCode - jong) / 28 ) % 21 
-
-            // 중성 
-            cho = (((cCode - jong) / 28 ) - jung ) / 21 
-            // 초성 
-
-            //기본 코드 테스트가 ㅌㅔㅅ-ㅌ- 형식으로 저장됨 
-            // chars.push(cCho[cho], cJung[jung]); 
-            // if (cJong[jong] !== '') { 
-            //     chars.push(cJong[jong]); 
-            //     } 
 
 
-            //  테스트라는 문장이 있으면 ㅌ테ㅅ스ㅌ트 형식으로 저장되도록함 (타이핑을 위해서)
-            chars.push(cCho[cho]);
-            chars.push(String.fromCharCode( 44032 + (cho * 588) + (jung  * 28)));
-            if (cJong[jong] !== '') { 
-                chars.push(String.fromCharCode( 44032 + (cho * 588) + (jung  * 28) + jong ));
-            }
-           
-        } 
-        
-        return chars; 
-    }
+var typingBool = false; 
+var typingIdx=0; 
+var liIndex = 0;
+var liLength = $(".typing-txt>ul>li").length; // 타이핑될 텍스트를 가져온다 
+var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
 
+if(typingBool==false){ // 타이핑이 진행되지 않았다면 
+    typingBool=true; 
+            var tyInt = setInterval(typing,100); // 반복동작 
+    } 
+     
 
-//타이핑할 문장
-    var result  = "벌써 예림이를 떠나보낸지 나흘이 되는 날. 예림이를 떠나보낼 수 없어 장례를 치르는 내내 한 순간도 잠을 이룰 수가 없었다. 가장 사랑하는 친구이자 동생이자 후배였던 예림이.";
-    var typeing1=[];
-    result = result.split(''); // 한글자씩자름
-
-    //각글자 초성,중성,종성으로 나눔
-    for(var i =0; i<result.length; i++){
-        typeing1[i]=result[i].toKorChars();
-    }
-
-    //출력할 엘리먼트요소 가져옴 
-    var resultDiv = document.getElementsByClassName("result")[0];
-
-    //
-    var text = "";
-    var i=0; 
-    var j=0; 
-    var text = '';
-
-    //총글자수
-    var imax = typeing1.length;
-
-    //setInterval을 이용해 반복적으로 출력 
-    var inter = setInterval(typi,75);
-
-
-    function typi(){
-        //글자수만큼 반복후 종료 
-        if(i<=imax-1){
-            //각 글자가 초성 중성 종성 순서대로 추가되도록 
-            var jmax = typeing1[i].length;
-            resultDiv.innerHTML = text + typeing1[i][j];
-            j++;
-            if(j==jmax){
-                text+=  typeing1[i][j-1];//초성중성종성 순서대로 출력된 글자는 저장 ( 다음 글자와 이어붙이기 위해서 )
-                i++;
-                j=0;
-            }
-        } else{
-            clearInterval(inter);
+function typing(){ 
+    $(".typing ul li").removeClass("on");
+   $(".typing ul li").eq(liIndex).addClass("on");
+  if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
+     $(".typing ul li").eq(liIndex).append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
+     typingIdx++; 
+   } else{ if(liIndex<liLength-1){
+     //다음문장으로  가기위해 인덱스를 1증가
+       liIndex++; 
+     //다음문장을 타이핑하기위한 셋팅
+        typingIdx=0;
+        typingBool = false; 
+        typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+       
+     //다음문장 타이핑전 1초 쉰다
+         clearInterval(tyInt);
+          //타이핑종료
+     
+         setTimeout(function(){
+           //1초후에 다시 타이핑 반복 시작
+           tyInt = setInterval(typing,100);
+         },1000);
+        } else if(liIndex==liLength-1){
+          
+         //마지막 문장까지 써지면 반복종료
+           clearInterval(tyInt);
         }
-    }
-     </script>  
+    } 
+}  
+
+</script>  
 
 
-</body>
+
 </html>
