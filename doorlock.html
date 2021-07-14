@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style/pagestyle3.css" />
     <link rel="stylesheet" href="./style/loginform.css" />
     <link rel="stylesheet" href="./style/defaultsetting.css" />
+    <link rel="stylesheet" href="./style/pinpad.css" />
 
     <title>Nightmare</title>
     <meta charset="UTF-8"/>
@@ -22,8 +23,10 @@
     <div class="typing-txt"> 
         <ul>
           <li>벌써 예림이를 떠나보낸지 나흘이 되는 날.</li>
-          <li>예림이를 떠나보낼 수 없어 장례를 치르는 내내 한 순간도 잠을 이룰 수가 없었다.</li>
+          <li>예림이를 떠나보낼 수 없어 장례를 치르는 내내</li>
+          <li>한 순간도 잠을 이룰 수가 없었다.</li>
           <li>가장 사랑하는 친구이자 동생이고 후배였던 예림이.</li>
+          <li>일을 마치고도 한참을 배회하다 집 앞에 도착했다.</li>
         </ul>
     </div> 
    
@@ -32,11 +35,15 @@
              <li></li>
              <li></li>
              <li></li>
+             <li></li>
+             <li></li>
         </ul>
     </div> 
 
+    <div id="PINcode"></div>
 
-    <div class="inner_login">
+
+   <!-- <div class="inner_login">
         <div class="login_joy">
     
             <form name="frm1" id="authForm" >
@@ -51,7 +58,7 @@
             </form>
         </div>
     </div>
-  
+  -->
     <audio preload="metadata" autoplay loop id="bgm"> 
         <source src="./sound/doorlock2_sad.mp3" type="audio/mp3"> 
        </audio>
@@ -138,6 +145,54 @@ function typing(){
         }
     } 
 }  
+
+$(function() {
+	$( "#PINform" ).draggable();
+});
+
+$( "#PINcode" ).html(
+	"<form action='' method='' name='PINform' id='PINform' autocomplete='off' draggable='true'>" +
+		"<input id='PINbox' type='password' value='' name='PINbox' disabled />" +
+		"<br/>" +
+		"<input type='button' class='PINbutton' name='1' value='1' id='1' onClick=addNumber(this); />" +
+		"<input type='button' class='PINbutton' name='2' value='2' id='2' onClick=addNumber(this); />" +
+		"<input type='button' class='PINbutton' name='3' value='3' id='3' onClick=addNumber(this); />" +
+		"<br>" +
+		"<input type='button' class='PINbutton' name='4' value='4' id='4' onClick=addNumber(this); />" +
+		"<input type='button' class='PINbutton' name='5' value='5' id='5' onClick=addNumber(this); />" +
+		"<input type='button' class='PINbutton' name='6' value='6' id='6' onClick=addNumber(this); />" +
+		"<br>" +
+		"<input type='button' class='PINbutton' name='7' value='7' id='7' onClick=addNumber(this); />" +
+		"<input type='button' class='PINbutton' name='8' value='8' id='8' onClick=addNumber(this); />" +
+		"<input type='button' class='PINbutton' name='9' value='9' id='9' onClick=addNumber(this); />" +
+		"<br>" +
+		"<input type='button' class='PINbutton clear' name='-' value='clear' id='-' onClick=clearForm(this); />" +
+		"<input type='button' class='PINbutton' name='0' value='0' id='0' onClick=addNumber(this); />" +
+		"<input type='button' class='PINbutton enter' name='+' value='enter' id='+' onClick=submitForm(PINbox); />" +
+	"</form>"
+);
+
+function addNumber(e){
+	
+	var v = $( "#PINbox" ).val();
+	$( "#PINbox" ).val( v + e.value );
+}
+function clearForm(e){
+	$( "#PINbox" ).val( "" );
+}
+function submitForm(e) {
+	if (e.value == "960903") {
+		alert("문이 열립니다.");
+    location.href = './firstpage.html';
+	} else {
+		alert( "비밀번호가 일치하지 않습니다." ); 
+		data = {
+			pin: e.value
+		}
+		$( "#PINbox" ).val( "" );
+	};
+};
+
 
 </script>  
 

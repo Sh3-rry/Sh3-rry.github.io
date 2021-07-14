@@ -13,6 +13,8 @@
  
  
  body {
+  margin: auto;
+
     background: url('../4back.jpg') no-repeat center center fixed;
     -webkit-background-size: 100vh; 
     -moz-background-size: 100vh;
