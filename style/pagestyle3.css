@@ -29,5 +29,5 @@ p.result{
       font-family: "han";
       font-style: normal;
       font-weight: 50;
-      src: url("../Nanumhandmtod.ttf") format('truetype');
+      src: url("../font/Nanumhandmtod.woff2") format('truetype');
     }
