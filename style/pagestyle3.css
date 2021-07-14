@@ -1,9 +1,10 @@
 @font-face {
-  font-family: "han";
+  font-family: "haram";
   font-style: normal;
   font-weight: 50;
-  src: url("../font/Nanumhandmtod.woff2") format('truetype');
+  src: url("../font/haram.woff2") format('truetype');
 }
+
 
 body {
    /* background: url('../3back.jpg') no-repeat center center fixed;
@@ -17,7 +18,7 @@ body {
 
 p.result{ 
   display: inline-block;
-  font-family: han;
+  font-family: haram;
   font-size:20px; 
   color: #fff;
   line-height: 28px;
