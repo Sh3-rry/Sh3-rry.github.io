@@ -39,7 +39,7 @@ input {
 .login_joy{
         position: relative;
         width: 320px;
-        margin: 0 auto;
+        margin: 0 0;
     }
 
 body, button, input, select, td, textarea, th {
