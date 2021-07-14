@@ -1,13 +1,3 @@
- body {
-    background: url('../4back.jpg') no-repeat center center fixed;
-    -webkit-background-size: 100vh; 
-    -moz-background-size: 100vh;
-    -o-background-size: 100vh; 
-    background-size: 100vh;
-    background-position: center center; 
-    background-color: black;
-}
-
 @font-face {
     font-family: "sff";
     font-style: normal;
@@ -20,3 +10,15 @@
     font-weight: 50;
     src: url("../font/haram.woff2") format('truetype');
   }
+ 
+ 
+ body {
+    background: url('../4back.jpg') no-repeat center center fixed;
+    -webkit-background-size: 100vh; 
+    -moz-background-size: 100vh;
+    -o-background-size: 100vh; 
+    background-size: 100vh;
+    background-position: center center; 
+    background-color: black;
+}
+

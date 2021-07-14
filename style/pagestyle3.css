@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "han";
+  font-style: normal;
+  font-weight: 50;
+  src: url("../font/Nanumhandmtod.woff2") format('truetype');
+}
+
 body {
    /* background: url('../3back.jpg') no-repeat center center fixed;
     -webkit-background-size: 100vh; 
@@ -25,9 +32,4 @@ p.result{
       100%{border-right: 1px solid #fff} 
     }
 
-    @font-face {
-      font-family: "han";
-      font-style: normal;
-      font-weight: 50;
-      src: url("../font/Nanumhandmtod.woff2") format('truetype');
-    }
+    
