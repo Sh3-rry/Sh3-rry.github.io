@@ -31,11 +31,3 @@ p.result{
       font-weight: 50;
       src: url("../Nanumhandmtod.ttf") format('truetype');
     }
-
-    @font-face {
-      font-family: "han";
-      font-style: normal;
-      font-weight: 50;
-      src: url("../Nanumhandmtod.ttf") format('truetype');
-    }
-  
