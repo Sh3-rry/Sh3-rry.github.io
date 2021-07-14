@@ -25,7 +25,7 @@
                 <fieldset>
                         <div class="box_login">
                             <div class="inp_text">
-                                <input type="text" id="inputcode" name="inputcode" placeholder="예림이의 편지에서 답을 찾으세요." onkeydown="Enterkey()" style="text-align: center">
+                                <input type="text" id="inputcode" name="inputcode" placeholder="방의 비밀번호를 입력하세요." onkeydown="Enterkey()" style="text-align: center">
                             </div>
                         </div>
                         <input type="button" class="btn_login" value="제출하기" onclick="ansChk()" style="text-align: center"></input>
@@ -34,11 +34,15 @@
         </div>
     </div>
   
-
+    <audio preload="metadata" autoplay loop id="bgm"> 
+        <source src="./sound/doorlock2_sad.mp3" type="audio/mp3"> 
+       </audio>
+       <button type="button" onclick="aud_play_pause()" style="position: fixed; bottom: 0; right: 0; background-color:rgba(0,0,0,0); border:1px solid black;color:skyblue">BGM</button> 
+    
 
     <script type="text/javascript">
      function ansChk() {
-           if(document.frm1.inputcode.value == "960903") alert('미구현')
+           if(document.frm1.inputcode.value == "960903") location.href = './firstpage.html';
      }      
   
      function Enterkey(){
@@ -114,7 +118,7 @@ String.prototype.toKorChars = function() {
 
 
 //타이핑할 문장
-    var result  = "ㅎㅇ구현중";
+    var result  = "벌써 예림이를 떠나보낸지 나흘이 되는 날. 예림이를 떠나보낼 수 없어 장례를 치르는 내내 한 순간도 잠을 이룰 수가 없었다. 가장 사랑하는 친구이자 동생이자 후배였던 예림이.";
     var typeing1=[];
     result = result.split(''); // 한글자씩자름
 
