@@ -8,30 +8,28 @@ body {
     background-color: black;
 }
 
-p.typing-txt{
-    position:relative;
-    display: inline-block;
-    height: 20px; overflow: hidden;
-    color:white;
-    animation: typingAni 1.5s steps(30, end) 1;
-  }
-  p.typing-txt::after{
-    position:absolute; 
-    display:block;
-    content:""; 
-    width: 20px; 
-    height: 15px;
-    top : 3px;
-    right:0; 
-    border-right: 1px solid white;
-    animation: cursor 0.5s step-end infinite;
-  }
-  @keyframes typingAni {
-    0%{width:0%}
-    100%{width: 150px};
-  }
-  @keyframes cursor{
-    0%{opacity:0;}
-    50%{opacity:1;}
-    100%{opacity:0;}
-  }
+
+p.result{ 
+  display: inline-block;
+  font-family: han;
+  font-size:20px; 
+  color: #fff;
+  line-height: 28px;
+  border-right: 1px solid #000; 
+  padding-right: 2px; 
+  box-sizing: border-box; 
+  animation: cursor 0.4s infinite;}
+
+ @keyframes cursor{ 
+      0%{border-right: 1px solid #fff} 
+      50%{border-right: 1px solid #000} 
+      100%{border-right: 1px solid #fff} 
+    }
+
+    @font-face {
+      font-family: "han";
+      font-style: normal;
+      font-weight: 50;
+      src: url("../Nanumhandmtod.ttf") format('truetype');
+    }
+  
