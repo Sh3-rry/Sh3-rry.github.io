@@ -41,11 +41,20 @@
       </div>
   </div>
 
-  <audio controls preload="metadata" autoplay loop> 
+  <audio preload="metadata" autoplay loop id="bgm"> 
     <source src="./sound/ph_1.mp3" type="audio/mp3"> 
    </audio>
-   
+   <button type="button" onclick="aud_play_pause()" style="position: fixed; bottom: 0; right: 0; background-color:rgba(0,0,0,0); border:1px solid black;color:skyblue">BGM</button> 
+
   <script type="text/javascript">
+
+function aud_play_pause() {
+     var myAudio = document.getElementById("bgm");
+      if (myAudio.paused) { myAudio.play(); } 
+      else { myAudio.pause(); } 
+} 
+
+  
    function ansChk() {
          if(document.frm1.inputcode.value == "") location.href = './firstpage.html';
    }      
