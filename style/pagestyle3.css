@@ -12,11 +12,14 @@ body {
     background-size: 100vh;
     background-position: center center; */
     background-color: black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../tearingjoy.png");
+    background-repeat: no-repeat;
+    background-position:center center;
 }
+
 .typing-txt
 {
-  display: none;
-  
+  display: none; 
 }
 ul{list-style:none;}
 .typing ul li{
@@ -25,7 +28,8 @@ ul{list-style:none;}
   display:block;
   color:white
 }
-.typing ul li.on {  
+.typing ul li.on {
+  text-align: center center;  
   display: inline-block; 
   animation-name: cursor; 
   animation-duration: 0.3s; 
